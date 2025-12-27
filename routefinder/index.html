@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Route Optimizer</title>
+    <link rel="stylesheet" href="route.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <div class="top">
+            <div class="top-left">
+                <div class="title">Route Optimizer</div>
+            </div>
+
+            <div class="controls">
+                <button class="btn" onclick="window.location.href='../mainfile/mainfile.html'">
+                    Back to Home
+                </button>
+                <button class="btn" onclick="resetMap()">Reset Map</button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Control Panel -->
+            <div class="panel">
+                <div class="panel-title">Find Shortest Path</div>
+                
+                <div class="form-group">
+                    <label>Start Location</label>
+                    <select id="start"></select>
+                </div>
+
+                <div class="form-group">
+                    <label>Destination</label>
+                    <select id="end"></select>
+                </div>
+
+                <button class="btn primary" onclick="findRoute()">Find Shortest Route</button>
+
+                <div id="output" class="output">Select locations to find the shortest route</div>
+            </div>
+
+            <!-- Map Container -->
+            <div class="map-container">
+                <canvas id="map" width="700" height="500"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="route.js"></script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+/* body{ margin:0; font-family:Arial,Helvetica,sans-serif; background:#0f172a; color:#e6eef8; display:flex; height:100vh; }
+.panel{ width:300px; padding:20px; background:#020617; box-sizing:border-box }
+h2{ text-align:center }
+label{ display:block; margin-top:10px }
+select, button, input{ width:100%; padding:10px; margin-top:8px; border-radius:6px; border:none; font-size:15px }
+button{ background:#38bdf8; color:#04263a; font-weight:700; cursor:pointer }
+.output{ margin-top:12px; background:#061022; padding:10px; border-radius:6px; min-height:48px }
+canvas{ flex:1; background:#020617 } */
+
+
+:root {
+    --bg: #0a1929;
+    --felt: linear-gradient(180deg, #1e3a5f, #152d4a);
+    --panel: rgba(30, 58, 94, 0.15);
+    --muted: #c7d6d0;
+    --accent: #64ffda;
+    --shadow: 0 10px 26px rgba(0, 0, 0, 0.6);
+    --radius: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    background: var(--bg);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 18px;
+    color: #fff;
+}
+
+.app {
+    width: 1100px;
+    max-width: 98vw;
+    background: var(--panel);
+    border-radius: 14px;
+    padding: 14px;
+    box-shadow: var(--shadow);
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.top-left {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--accent);
+}
+
+.controls {
+    margin-left: auto;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    border-color: rgba(255, 255, 255, 0.12);
+    color: #fff;
+}
+
+.btn.primary {
+    background: rgba(100, 255, 218, 0.15);
+    border-color: rgba(100, 255, 218, 0.3);
+    color: var(--accent);
+}
+
+.btn.primary:hover {
+    background: rgba(100, 255, 218, 0.25);
+}
+
+.main-content {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.panel {
+    width: 280px;
+    background: var(--felt);
+    padding: 18px;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.panel-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 14px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 12px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 6px;
+}
+
+select,
+input[type="text"] {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+select:focus,
+input[type="text"]:focus {
+    border-color: var(--accent);
+}
+
+select option {
+    background: #1e3a5f;
+}
+
+.panel .btn {
+    width: 100%;
+    margin-top: 8px;
+    padding: 10px;
+}
+
+.output {
+    margin-top: 14px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 12px;
+    border-radius: 8px;
+    min-height: 50px;
+    font-size: 13px;
+    color: var(--muted);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.output b {
+    color: #fff;
+}
+
+.map-container {
+    flex: 1;
+    min-width: 300px;
+    background: var(--felt);
+    padding: 18px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.45);
+}
+
+.instructions {
+    margin-top: 14px;
+    padding: 12px 16px;
+    background: rgba(15, 82, 186, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(15, 82, 186, 0.15);
+    font-size: 12px;
+    color: var(--muted);
+    text-align: center;
+}
+
+
+@media (max-width: 800px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .panel {
+        width: 100%;
+    }
+
+    canvas {
+        width: 100%;
+        height: auto;
+    }
+}

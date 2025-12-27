@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="snake.css">
+</head>
+<body>
+    <div class="app" id="app">
+        <div class="top">
+            <div class="top-left">
+                <div class="title"> Snake Game</div>
+            </div>
+            
+            <div class="controls">
+                <button class="btn" id="back-btn" onclick="window.location.href='../mainfile/mainfile.html'">
+                    Back to Home
+                </button>
+                <button class="btn" id="newBtn">New Game</button>
+                <button class="btn" id="pauseBtn">Pause</button>
+                
+                <div class="hud">
+                    <div class="score-display">
+                        <span class="label">Score:</span>
+                        <span id="score">0</span>
+                    </div>
+                    <div class="small">Length: <span id="length">3</span></div>
+                    <div class="small">High Score: <span id="highScore">0</span></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="board" id="board">
+            <canvas id="gameCanvas"></canvas>
+        </div>
+        
+    </div>
+    
+    <!-- Game Over Overlay -->
+    <div class="overlay" id="gameOverlay">
+        <div class="overlay-content">
+            <h2 id="overlayTitle"> Snake Game</h2>
+            <p id="overlayMessage">Press ENTER to Start</p> 
+            <div class="overlay-stats" id="overlayStats" style="display: none;">
+                <div class="stat">
+                    <span class="stat-label">Score</span>
+                    <span class="stat-value" id="finalScore">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Length</span>
+                    <span class="stat-value" id="finalLength">3</span>
+                </div>
+            </div>
+            <button class="btn play-btn" id="replayBtn">▶ Play</button>
+            <button class="btn" id="backBtn" onclick="window.location.href='../mainfile/mainfile.html'">
+             Back to Home
+             </button>
+        </div>
+    </div>
+    
+    <script src="datastructures.js"></script>
+    <script src="snake.js"></script>
+</body>
+</html>

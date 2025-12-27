@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Studio - Learn DSA Through Games</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="mainfile.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">GameStudio</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#games">Games</a></li>
+            <li><a href="about.html">About</a></li> 
+        </ul>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search games..." oninput="searchGames()">
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Learn <span class="gradient-text">DSA</span><br>Through Games</h1>
+            <br><br>
+            <br><br>
+            <div class="hero-buttons">
+                <button class="btn-primary"
+                    onclick="document.getElementById('games').scrollIntoView({behavior: 'smooth'})">Explore
+                    Games</button>
+                <br><br>
+                <br><br>
+            </div>
+        </div>
+    </section>
+
+    <section class="games-section" id="games">
+        <div class="section-header">
+            <h2>Choose Your Game</h2>
+            <p></p>
+        </div>
+
+        <div class="games-grid" id="gamesGrid">
+            <div class="game-card" data-name="solitaire" data-tags="stacks queues cards sorting">
+                <div class="game-image"><img src="solitare.jpg" alt="Solitaire"></div>
+                <div class="game-info">
+                    <h3>Solitaire</h3>
+                    <div class="game-tags"><span class="tag">Stacks</span><span class="tag">Queues</span><span
+                            class="tag">Double LL</span></div>
+                    <p>Classic card game applying key DSA concepts like stacks, queues, and sorting algorithms.</p>
+                    <button class="play-btn" onclick="window.open('../solitaire/index.html', '_blank')">Play
+                        Now</button>
+                </div>
+            </div>
+
+            <div class="game-card" data-name="minesweeper" data-tags="bfs recursion graph traversal mines">
+                <div class="game-image"><img src="minesweeper.jpg" alt="Minesweeper"></div>
+                <div class="game-info">
+                    <h3>Minesweeper</h3>
+                    <div class="game-tags"><span class="tag">BFS</span><span class="tag">Queue</span></div>
+                    <p>Uncover safe cells and avoid mines using graph traversal and recursive algorithms.</p>
+                    <button class="play-btn" onclick="window.open('../minesweeper/index.html', '_blank')">Play
+                        Now</button>
+                </div>
+            </div>
+
+            <div class="game-card" data-name="tower of hanoi" data-tags="stacks recursion disks puzzle">
+                <div class="game-image"><img src="towerofhanoi.jpg" alt="Tower of Hanoi"></div>
+                <div class="game-info">
+                    <h3>Tower of Hanoi</h3>
+                    <div class="game-tags"><span class="tag">Stacks</span><span class="tag">Recursion</span></div>
+                    <p>Move the disks following the rules, mastering recursion and stack operations.</p>
+                    <button class="play-btn" onclick="window.open('../towerofhanoi/index.html', '_blank')">Play
+                        Now</button>
+                </div>
+            </div>
+
+            <div class="game-card" data-name="Sudoku" data-tags="backtracking constraints logic puzzle">
+                <div class="game-image"><img src="suduko.png.jpg" alt="Sudoku"></div>
+                <div class="game-info">
+                    <h3>Sudoku </h3>
+                    <div class="game-tags"><span class="tag">Backtracking</span><span class="tag">Constraints</span>
+                    </div>
+                    <p>Sharpen logic with backtracking and constraint solving algorithms.</p>
+                    <button class="play-btn" onclick="window.open('../sudoku/index.html', '_blank')">Play Now</button>
+                </div>
+            </div>
+
+            <div class="game-card" data-name="freecell" data-tags="stacks strategy cards queues">
+                <div class="game-image"><img src="freecell2.png.jpg" alt="Freecell"></div>
+                <div class="game-info">
+                    <h3>Freecell</h3>
+                    <div class="game-tags"><span class="tag">Stacks</span><span class="tag">Hashing</span></div>
+                    <p>Test strategic thinking with this classic card game using stacks and queues.</p>
+                    <button class="play-btn" onclick="window.open('../freecell/index.html', '_blank')">Play Now</button>
+                </div>
+            </div>
+
+            <div class="game-card" data-name="snake game" data-tags="queues state management linked list">
+                <div class="game-image"><img src="snake.jpg" alt="Snake Game"></div>
+                <div class="game-info">
+                    <h3>Snake Game</h3>
+                    <div class="game-tags"><span class="tag">Queues</span><span class="tag">Double LL</span></div>
+                    <p>Grow the snake while applying queue operations and state management.</p>
+                    <button class="play-btn" onclick="window.open('../snakegame/index.html', '_blank')">Play
+                        Now</button>
+                </div>
+            </div>
+
+            <div class="game-card" data-name="water sort" data-tags="stacks state management colors puzzle">
+                <div class="game-image"><img src="watersort.png.jpg" alt="Water Sort"></div>
+                <div class="game-info">
+                    <h3>Water Sort</h3>
+                    <div class="game-tags"><span class="tag">Stacks</span><span class="tag">State</span></div>
+                    <p>Organize colors using stack operations and state management concepts.</p>
+                    <button class="play-btn" onclick="window.open('../watersort/index.html', '_blank')">Play
+                        Now</button>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image"><img src="shortestpath.png.jpg" alt="Shortest Path"></div>
+                <div class="game-info">
+                    <h3>Shortest Path</h3>
+                    <div class="game-tags"><span class="tag">Dijkstra</span><span class="tag">Graphs</span></div>
+                    <p>Visualize Dijkstra's algorithm and find shortest paths in graphs.</p>
+                    <button class="play-btn" onclick="window.open('../routefinder/index.html', '_blank')">Play
+                        Now</button>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image"><img src="memorymatch.jpg" alt="Memory Match"></div>
+                <div class="game-info">
+                    <h3>Memory Match</h3>
+                    <div class="game-tags"><span class="tag">Arrays</span><span class="tag">Search</span></div>
+                    <p>Sharpen your recall while applying array and search concepts.</p>
+                    <button class="play-btn" onclick="window.open('../memorymatch/index.html', '_blank')">Play
+                        Now</button>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image"><img src="tictactoe.png.jpg" alt="Tic Tac Toe"></div>
+                <div class="game-info">
+                    <h3>Tic Tac Toe</h3>
+                    <div class="game-tags"><span class="tag">Arrays</span><span class="tag">Linear Search</span></div>
+                    <p>Sharpens logical thinking through game-state evaluation and decision-making algorithms.</p>
+                    <button class="play-btn" onclick="window.open('../tictactoe/index.html', '_blank')">Play
+                        Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; GameStudio. All rights reserved.
+    </footer>
+
+    <script>
+        function searchGames() {
+            var searchInput = document.getElementById('searchInput');
+            var filter = searchInput.value.toLowerCase().trim();
+            var gamesGrid = document.getElementById('gamesGrid');
+            var gameCards = gamesGrid.querySelectorAll('.game-card');
+            var noResultsMsg = document.getElementById('noResults');
+            var visibleCount = 0;
+
+            // Remove existing no-results message
+            if (noResultsMsg) {
+                noResultsMsg.remove();
+            }
+
+            gameCards.forEach(function (card) {
+                var name = card.getAttribute('data-name') || '';
+
+                // Check if any word in the name starts with the filter
+                var words = name.split(/\s+/);
+                var matches = filter === '' || words.some(function (word) {
+                    return word.indexOf(filter) === 0;
+                });
+
+                if (matches) {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            // Show no results message if needed
+            if (visibleCount === 0 && filter !== '') {
+                var noResults = document.createElement('div');
+                noResults.id = 'noResults';
+                noResults.className = 'no-results';
+                noResults.innerHTML = '<h3>No games found</h3><p>Try searching for "stack", "bfs", "recursion", or game names</p>';
+                gamesGrid.appendChild(noResults);
+            }
+        }
+
+        //Handle Enter key in search
+        document.getElementById('searchInput').addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                this.value = '';
+                searchGames();
+            }
+        });
+    </script>
+</body>
+
+</html>

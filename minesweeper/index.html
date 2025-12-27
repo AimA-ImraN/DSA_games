@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minesweeper</title>
+  <link rel="stylesheet" href="minesweeper.css">
+</head>
+<body>
+  <div class="container">
+    <div class="controls">
+      <span class="game-title">Minesweeper</span>
+      <button class="btn" id="backBtn" onclick="window.location.href='../mainfile/mainfile.html'">
+          Back to Home
+        </button>
+      
+      <button class="new-game-btn" id="newGameBtn">New Game</button>
+      
+      <div class="stat-item">
+        <span class="stat-icon">🚩</span>
+        <div class="stat-value" id="mineCount">10</div>
+      </div>
+      
+      <div class="stat-item">
+        <span class="stat-icon">⏱️</span>
+        <div class="stat-value" id="timer">00:00</div>
+      </div>
+      
+      <div class="score-info">
+        Moves: <span id="moves">0</span> | Score: <span id="score">0/71</span>
+      </div>
+    </div>
+    
+    <div class="board-wrapper">
+      <div id="board" class="board"></div>
+    </div>
+    
+    <div id="message" class="message"></div>
+  </div>
+
+  <script src="datastructures.js"></script>
+  <script src="minesweeper.js"></script>
+</body>
+</html>

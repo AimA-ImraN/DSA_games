@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pac-Man</title>
+    <link rel="stylesheet" href="pacman.css">
+</head>
+<body>
+    <div class="app" id="app">
+        <!-- Header -->
+        <div class="top">
+            <div class="top-left">
+                <div class="title">PAC-MAN</div>
+            </div>
+
+            <div class="controls">
+                <button class="btn" id="back-btn" onclick="window.location.href='../mainfile/mainfile.html'">
+                    Back to Home
+                </button>
+                <button class="btn" id="new-game-btn">New Game</button>
+                <button class="btn" id="pause-btn">Pause</button>
+            </div>
+
+            <div class="hud">
+                <div class="hud-item">
+                    <span class="label">Score:</span>
+                    <span class="value" id="score-display">0</span>
+                </div>
+                <div class="hud-item">
+                    <span class="label">High:</span>
+                    <span class="value" id="high-score">0</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Board -->
+        <div class="board-container">
+            <canvas id="board"></canvas>
+            <div class="pause-overlay" id="pause-overlay">
+                <div class="pause-text">PAUSED</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Over Overlay -->
+    <div class="game-over-overlay" id="game-over-overlay">
+        <div class="game-over-content">
+            <div class="game-over-title" id="game-over-title">GAME OVER</div>
+            <div class="final-score">
+                Final Score: <span class="score-value" id="final-score">0</span>
+            </div>
+            <button class="restart-btn" id="restart-btn">Play Again</button>
+        </div>
+    </div>
+
+    <script src="pacman.js"></script>
+</body>
+</html>

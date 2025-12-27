@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Classic Klondike Solitaire</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="app" id="app">
+    <div class="top">
+      <div class="top-left">
+        <div class="title">Classic Solitaire</div>
+      </div>
+
+      <div class="controls">
+        <button class="btn" id="back-btn" onclick="window.location.href='../mainfile/mainfile.html'">
+          Back to Home
+        </button>
+
+        <button class="btn" id="newBtn">New Game</button>
+        <button class="btn" id="undoBtn" disabled>Undo</button>
+        <button class="btn" id="hintBtn">Hint</button>
+
+        <div class="hud">
+          <div class="timer" id="timer">00:00</div>
+          <div class="small">Moves: <span id="moves">0</span></div>
+          <div class="small">Score: <span id="foundCount">0</span>/52</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="board" id="board">
+      <div class="top-row">
+        <div style="display:flex;gap:12px;align-items:center">
+          <div class="pile" id="stock" title="Click to draw">
+            <div id="stock-inner"></div>
+            <div class="count" id="stockCount">0</div>
+          </div>
+
+          <div style="position:relative; width:var(--card-w); height:var(--card-h);">
+            <div id="waste-area" style="position:absolute;left:0;top:0;width:100%;height:100%;"></div>
+          </div>
+        </div>
+
+        <div class="foundations" id="foundations">
+          <div class="pile foundation" data-suit="hearts" title="Hearts Foundation">♥</div>
+          <div class="pile foundation" data-suit="diamonds" title="Diamonds Foundation">♦</div>
+          <div class="pile foundation" data-suit="clubs" title="Clubs Foundation">♣</div>
+          <div class="pile foundation" data-suit="spades" title="Spades Foundation">♠</div>
+        </div>
+      </div>
+
+      <div class="tableau" id="tableau"></div>
+    </div>
+  </div>
+
+  <script src="dataStructures.js"></script>
+  <script src="game.js"></script>
+</body>
+
+</html>

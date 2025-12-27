@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tower of Hanoi</title>
+    <link rel="stylesheet" href="towerofhanoi.css">
+</head>
+
+<body>
+    <div class="app" id="app">
+        <div class="top">
+            <div class="top-left">
+                <div class="title">Tower of Hanoi</div>
+            </div>
+
+            <div class="controls">
+                <button class="btn" id="back-btn" onclick="window.location.href='../mainfile/mainfile.html'">
+                    Back to Home
+                </button>
+
+                <button class="btn primary" id="reset-btn">Reset</button>
+                <button class="btn" id="solve-btn">Auto Solve</button>
+
+                <div class="hud">
+                    <div class="timer" id="timer">00:00</div>
+                    <div class="small">Moves: <span id="moves">0</span></div>
+                    <div class="small">Minimum: <span id="min-moves">31</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="board" id="board">
+            <!-- Warning Message -->
+            <div class="warning" id="warning">
+                <span class="warning-icon">⚠️</span>
+                <span class="warning-text">Invalid move! Cannot place larger disk on smaller disk.</span>
+            </div>
+
+            <!-- Victory Message -->
+            <div class="victory" id="victory">
+                <div class="victory-content">
+                    <h2>🎉 Puzzle Solved!</h2>
+                    <p>Total Moves: <span id="victory-moves">0</span></p>
+                    <p>Minimum Possible: <span id="victory-min">31</span></p>
+                    <p>Time: <span id="victory-time">00:00</span></p>
+                    <button class="btn primary" id="play-again-btn">Play Again</button>
+                    <button class="btn" id="back-btn" onclick="window.location.href='../mainfile/mainfile.html'">
+                    Back to Home
+                </button>
+                </div>
+            </div>
+
+            <!-- Tower Area -->
+            <div class="towers-container">
+                <div class="tower" id="tower-A" data-peg="A">
+                    <div class="peg"></div>
+                    <div class="base"></div>
+                    <div class="disks" id="disks-A"></div>
+                    <div class="label">Peg A (Source)</div>
+                </div>
+
+                <div class="tower" id="tower-B" data-peg="B">
+                    <div class="peg"></div>
+                    <div class="base"></div>
+                    <div class="disks" id="disks-B"></div>
+                    <div class="label">Peg B (Auxiliary)</div>
+                </div>
+
+                <div class="tower" id="tower-C" data-peg="C">
+                    <div class="peg"></div>
+                    <div class="base"></div>
+                    <div class="disks" id="disks-C"></div>
+                    <div class="label">Peg C (Target)</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="datastructures.js"></script>
+    <script src="towerofhanoi.js"></script>
+</body>
+
+</html>
